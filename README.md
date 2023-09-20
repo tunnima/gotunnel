@@ -1,3 +1,19 @@
+map: https://github.com/tunnima/my-docs
+
+# Install:
+go install github.com/xjdrew/gotunnel
+Installation path:
+go/bin/gotunnel
+
+# configuration:
+Server B.B.B.B:
+go/bin/gotunnel -listen=:9991 -backend=127.0.0.1:4445 -secret="kian" -log=1
+
+Client A.A.A.A:
+go/bin/gotunnel -tunnels=20 -listen="0.0.0.0:3125" -backend="B.B.B.B:9991" -secret="kian" -log=1
+
+
+
 [![Build Status](https://travis-ci.org/xjdrew/gotunnel.svg?branch=master)](https://travis-ci.org/xjdrew/gotunnel)
 
 ## gotunnel
